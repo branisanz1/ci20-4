@@ -1,9 +1,6 @@
-name: Deploy
-
-on: [push]
 name: Deploy to Heroku
 
-on: 
+on:
   push:
     tags:
       - v*
@@ -16,10 +13,9 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: "2.6" # Version range or exact version of a Ruby version to use, using semvers version range syntax.
-    
+
       - name: install gem
         run: gem install dpl
 
       - name: deploy heroku
         run: dpl --provider=heroku --app=testbranisci --api-key=${{secrets.HEROKU_API_KEY}}
-
