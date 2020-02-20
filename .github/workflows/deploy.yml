@@ -20,6 +20,6 @@ jobs:
       - name: install gem
         run: gem install dpl
 
-      - name: deploy
+      - name: deploy heroku
         run: dpl --provider=heroku --app=testbranisci --api-key=${{secrets.HEROKU_API_KEY}}
 
